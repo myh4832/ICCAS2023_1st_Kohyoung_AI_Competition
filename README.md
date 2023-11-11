@@ -15,8 +15,8 @@ All images of each folder are assigned one designated label. It means that each 
 
 - Loss Function으로 KL divergence를 이용한 Distillation Loss 및 Feature level MSE Knowledge Distillation Loss 사용
 `distill_loss = nn.functional.kl_div(nn.functional.log_softmax(output['logit'] / temperature, dim=1), nn.functional.softmax(old_output['logit'].detach() / temperature, dim=1), reduction='batchmean', log_target=False)
-                feature_kd_loss = hcl(output['feature'][-1], old_output_feature)
-                _loss = cfg['lambda_ent'] * _loss + cfg['lambda_distill'] * distill_loss + cfg['lambda_feat'] * feature_kd_loss`
+feature_kd_loss = hcl(output['feature'][-1], old_output_feature)
+_loss = cfg['lambda_ent'] * _loss + cfg['lambda_distill'] * distill_loss + cfg['lambda_feat'] * feature_kd_loss`
 
 - optimizer : AdamW
 - minimizer : ASAM (Generalization 능력 극대화)
