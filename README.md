@@ -20,3 +20,9 @@ _loss = cfg['lambda_ent'] * _loss + cfg['lambda_distill'] * distill_loss + cfg['
 
 - optimizer : AdamW
 - minimizer : ASAM (Generalization 능력 극대화)
+
+## Result
+- 10 Task Average Accuracy : 98.1%
+- Last Task Accuracy       : 95.3%
+
+### Gold Medal!! ###
